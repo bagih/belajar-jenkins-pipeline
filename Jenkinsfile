@@ -11,13 +11,32 @@ pipeline{
         APP_CRED = credentials("bagih_cred_demo")
     }
 
-    options {
-        disableConcurrentBuilds()
-        timeout(time: 10, unit: "SECONDS")
+//     options {
+//         disableConcurrentBuilds()
+//         timeout(time: 10, unit: "SECONDS")
+//     }
+
+    parameters{
+        string(name: "USERNAME", defaultValue: "guest", description: "enter your username")
+        text(name: "DESCRIPTION", defaultValue: "", description: "tell me more about yourself")
+        booleanParam(name: "DEPLOY", defaultValue: false, description: "Deploy to Production?")
+        choice(name: "TEAM", choices: ['A021', 'A2201', 'B221'], description: "which team do you belong?")
+        password(name: "SECRET", defaultValue: "", description: "enter your password")
     }
 
 
     stages{
+        stage("parameters preparation"){
+            agent any
+            steps{
+                echo "username: ${params.USERNAME}"
+                echo "description: ${params.DESCRIPTION}"
+                echo "Deploy to production?: ${params.DEPLOY}"
+                echo "From Team: ${params.TEAM}"
+                sh 'echo "Password: $params.SECRET"'
+            }
+        }
+
         stage("Prepare"){
             agent any
 

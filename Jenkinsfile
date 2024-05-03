@@ -16,11 +16,11 @@ pipeline{
             steps{
                 echo "Build..."
                 script{
-                    def data = [
-                        "firstName": "Bagi",
-                        "lastName": "Hartawan",
-                        "fullName": "Bagi Hartawan"
-                    ]
+//                     def data = [
+//                         "firstName": "Bagi",
+//                         "lastName": "Hartawan",
+//                         "fullName": "Bagi Hartawan"
+//                     ]
                     def dataJSON = readJSON(file: "data.json")
                     println(dataJSON)
 

@@ -8,13 +8,16 @@ pipeline{
         stage("Build"){
             steps{
                 echo "Build..."
-                sleep(5)
+                sh("./mvnw clean compile test-compile")
+                echo "finish build"
             }
 
         }
         stage("Test"){
             steps{
                 echo "Test..."
+                sh("./mvnw test")
+                echo "finish test"
             }
         }
         stage("Deploy"){

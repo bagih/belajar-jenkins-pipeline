@@ -33,7 +33,7 @@ pipeline{
                 echo "description: ${params.DESCRIPTION}"
                 echo "Deploy to production?: ${params.DEPLOY}"
                 echo "From Team: ${params.TEAM}"
-                sh 'echo "Password: $params.SECRET"'
+                echo "Password: ${params.SECRET}"
             }
         }
 

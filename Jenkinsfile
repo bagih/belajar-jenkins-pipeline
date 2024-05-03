@@ -13,8 +13,14 @@ pipeline{
     stages{
         stage("Prepare"){
             agent any
+
+            environment{
+                STAGE_AUTHOR = "Bagih"
+            }
+
             steps{
                 echo "AUTHOR: ${AUTHOR}"
+                echo "stage author: ${STAGE_AUTHOR}"
                 echo "Start JOB: ${env.JOB_NAME}"
                 echo "Start Build: ${env.BUILD_NUMBER}"
                 echo "On Branch: ${env.BRANCH_NAME}"

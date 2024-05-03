@@ -4,8 +4,19 @@ pipeline{
 //             label "linux && java21"
 //         }
 //     }
-       agent none
+    agent none
+
     stages{
+        stage("Prepare"){
+            agent any
+            steps{
+                echo "Start JOB: ${env.JOB_NAME}"
+                echo "Start Build: ${env.BUILD_NUMBER}"
+                echo "On Branch: ${env.BRANCH_NAME}"
+                echo "description: ${currentBuild.description}"
+            }
+        }
+
         stage("Build"){
             agent{
                 node{

@@ -11,6 +11,12 @@ pipeline{
         APP_CRED = credentials("bagih_cred_demo")
     }
 
+    options {
+        disableConcurrentBuilds()
+        timeout time:10 unit: 'SECONDS'
+    }
+
+
     stages{
         stage("Prepare"){
             agent any

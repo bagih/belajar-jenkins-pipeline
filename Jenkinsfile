@@ -9,11 +9,11 @@ pipeline{
             steps{
                 echo "Build..."
                 script{
-                    def data = {
+                    def data = [
                         "firstName": "Bagi",
                         "lastName": "Hartawan",
                         "fullName": "Bagi Hartawan"
-                    }
+                    ]
                     writeJSON(file: "data.json", json: data)
                 }
                 sh("./mvnw clean compile test-compile")

@@ -8,8 +8,9 @@ pipeline{
         stage("Build"){
             steps{
                 echo "Build..."
+                sleep(5)
             }
-            sleep(5)
+
         }
         stage("Test"){
             steps{

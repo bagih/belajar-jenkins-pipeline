@@ -72,6 +72,8 @@ pipeline{
         }
         cleanup{
             echo "cleanup: i will always be executed"
+            echo "branch name: ${env.BRANCH_NAME}"
+            echo "description: ${currentBuild.description}"
         }
     }
 }

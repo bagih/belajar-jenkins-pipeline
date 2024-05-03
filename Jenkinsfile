@@ -14,7 +14,9 @@ pipeline{
                         "lastName": "Hartawan",
                         "fullName": "Bagi Hartawan"
                     ]
-                    writeJSON(file: "data.json", json: data)
+                    def dataJSON = readJSON(file: "data.json")
+                    println(dataJSON)
+
                 }
                 sh("./mvnw clean compile test-compile")
                 echo "finish build"

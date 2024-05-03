@@ -8,6 +8,11 @@ pipeline{
         stage("Build"){
             steps{
                 echo "Build..."
+                script{
+                    for (int i = 0; i < 10; i++){
+                        echo "Script ${i}"
+                    }
+                }
                 sh("./mvnw clean compile test-compile")
                 echo "finish build"
             }

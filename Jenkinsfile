@@ -52,7 +52,7 @@ pipeline{
                 echo "AUTHOR: ${AUTHOR}"
                 echo "Using username: ${APP_CRED_USR}"
 //                 echo "Using password: ${APP_CRED_PSW}"
-                sh 'echo Using Password: $APP_CRED_PSW'
+//                 sh 'echo Using Password: $APP_CRED_PSW'
                 echo "stage author: ${STAGE_AUTHOR}"
                 echo "Start JOB: ${env.JOB_NAME}"
                 echo "Start Build: ${env.BUILD_NUMBER}"

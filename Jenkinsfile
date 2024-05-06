@@ -16,13 +16,13 @@ pipeline{
 //         timeout(time: 10, unit: "SECONDS")
 //     }
 
-    parameters{
-        string(name: "USERNAME", defaultValue: "guest", description: "enter your username")
-        text(name: "DESCRIPTION", defaultValue: "", description: "tell me more about yourself")
-        booleanParam(name: "DEPLOY", defaultValue: false, description: "Deploy to Production?")
-        choice(name: "TEAM", choices: ['A021', 'A2201', 'B221'], description: "which team do you belong?")
-        password(name: "SECRET", defaultValue: "", description: "enter your password")
-    }
+//     parameters{
+//         string(name: "USERNAME", defaultValue: "guest", description: "enter your username")
+//         text(name: "DESCRIPTION", defaultValue: "", description: "tell me more about yourself")
+//         booleanParam(name: "DEPLOY", defaultValue: false, description: "Deploy to Production?")
+//         choice(name: "TEAM", choices: ['A021', 'A2201', 'B221'], description: "which team do you belong?")
+//         password(name: "SECRET", defaultValue: "", description: "enter your password")
+//     }
 
     triggers{
         cron(*/1 * * * *)
